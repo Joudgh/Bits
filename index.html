@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bits Digital Agency - Web Development</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="instagram-post">
+        <div class="post-header">
+            <img src="/imgs/logo.png" alt="Bits Logo" class="logo">
+            <h1>We Build Digital Experiences</h1>
+        </div>
+
+        <div class="code-container" id="codeContainer">
+            <pre><code class="language-html" id="codeBlock">
+<!-- Sample HTML Code -->
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Modern Website&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="hero"&gt;
+        &lt;h1&gt;Your Dream Website&lt;/h1&gt;
+        &lt;button&gt;Get Started&lt;/button&gt;
+    &lt;/header&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </div>
+
+        <div class="website-preview" id="websitePreview">
+            <div class="website-mockup">
+                <div class="browser-bar">
+                    <div class="dots"></div>
+                </div>
+                <div class="website-content">
+                    <header class="hero">
+                        <h1>Your Dream Website</h1>
+                        <button>Get Started</button>
+                    </header>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-footer">
+            <p>Transform your ideas into reality →</p>
+            <button id="transformBtn">See the Magic</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Initialize syntax highlighting
+            hljs.highlightAll();
+
+            const transformBtn = document.getElementById('transformBtn');
+            const codeContainer = document.getElementById('codeContainer');
+            const websitePreview = document.getElementById('websitePreview');
+
+            transformBtn.addEventListener('click', () => {
+                // Toggle between code and preview
+                if (codeContainer.style.height === '0px') {
+                    codeContainer.style.height = 'auto';
+                    websitePreview.style.height = '0';
+                    transformBtn.textContent = 'See the Magic';
+                } else {
+                    codeContainer.style.height = '0';
+                    websitePreview.style.height = 'auto';
+                    transformBtn.textContent = 'View Code';
+                }
+            });
+
+            // Optional: Add hover effect
+            websitePreview.addEventListener('mouseenter', () => {
+                document.querySelector('.hero button').style.transform = 'scale(1.05)';
+            });
+
+            websitePreview.addEventListener('mouseleave', () => {
+                document.querySelector('.hero button').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
